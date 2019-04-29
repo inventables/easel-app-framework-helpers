@@ -335,6 +335,8 @@ EASEL.volumeHelper = (function() {
   };
 
   intersect = function(subjectVolumes, clipVolumes, operation) {
+    var clipper = new ClipperLib.Clipper();
+
     operation = operation || ClipperLib.ClipType.ctIntersection;
 
     subjectLines = flatMap(subjectVolumes.map(toSegments));
